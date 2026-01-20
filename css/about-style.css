@@ -1,0 +1,287 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: "Libre Baskerville", serif;
+  background: #121212;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+/* HEADER */
+.header {
+  background: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  color: #e0e0e0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+/* PROFILE */
+.profile-section {
+  padding: 60px 20px;
+}
+
+.profile-card {
+  max-width: 1000px;
+  margin: auto;
+  background: #1f1f1f;
+  border-radius: 16px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile-text h2 {
+  color: #00aaff;
+  margin-bottom: 15px;
+}
+
+.profile-text p {
+  margin-bottom: 10px;
+}
+
+.profile-text a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
+  border: 4px solid #333;
+  justify-self: end;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  color: #00aaff;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section-dark {
+  background: #1f1f1f;
+  border-radius: 16px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* SKILLS */
+.skills-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+
+/* HOBBIES */
+.hobby-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.hobby-list li {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  background: #00aaff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #0077cc;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in to all sections */
+.section, .profile-card {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Stagger animations for multiple elements */
+.profile-text, .profile-image {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.profile-text {
+  animation-delay: 0.5s;
+}
+
+.profile-image {
+  animation-delay: 0.8s;
+}
+
+/* Hobbies and skills */
+.skills-grid li, .hobby-list li {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Staggering for skills */
+.skills-grid li:nth-child(1) { animation-delay: 0.3s; }
+.skills-grid li:nth-child(2) { animation-delay: 0.5s; }
+.skills-grid li:nth-child(3) { animation-delay: 0.7s; }
+.skills-grid li:nth-child(4) { animation-delay: 0.9s; }
+.skills-grid li:nth-child(5) { animation-delay: 1.1s; }
+.skills-grid li:nth-child(6) { animation-delay: 1.3s; }
+
+/* Hobbies */
+.hobby-list li:nth-child(1) { animation-delay: 0.3s; }
+.hobby-list li:nth-child(2) { animation-delay: 0.5s; }
+.hobby-list li:nth-child(3) { animation-delay: 0.7s; }
+.hobby-list li:nth-child(4) { animation-delay: 0.9s; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1f1f1f;
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* Show menu when checked */
+  #menu-toggle:checked ~ .nav {
+    display: block;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.logo {
+  animation: slide-in 1s ease forwards;
+  animation-delay: 0.3s; /* optional delay */
+}

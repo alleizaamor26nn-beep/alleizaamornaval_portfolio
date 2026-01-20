@@ -1,0 +1,134 @@
+/* General body styles */
+body {
+  font-family: "Libre Baskerville", "Bookman Old Style", Bookman, serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #121212;
+  overflow-x: hidden;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* Header styles */
+header {
+  background-color: #1f1f1f;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #333333;
+}
+
+/* Navigation container with flex alignment */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Title styling */
+.nav-container h1 {
+  font-size: 24px;
+  color: #f1f1f1;
+  margin: 0;
+  animation: slide-in 1s ease-in-out;
+}
+
+/* Navigation menu styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+/* Main section layout */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 60px;
+}
+
+
+/* Left side with image */
+.left img {
+  max-width: 700px;
+  height: auto;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Right side with text and buttons */
+.right h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.right p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  background-color: #00aaff;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077cc;
+  transform: scale(1.1);
+}
+
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
