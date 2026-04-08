@@ -1,0 +1,351 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: "Libre Baskerville", serif;
+  background: #121212;
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden; /* Iwas sa horizontal scroll */
+}
+
+/* HEADER */
+.header {
+  background: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+/* PROFILE */
+.profile-section {
+  padding: 60px 20px;
+}
+
+.profile-card {
+  max-width: 1000px;
+  margin: auto;
+  background: #1f1f1f;
+  border-radius: 16px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile-text h2 {
+  color: #00aaff;
+  margin-bottom: 15px;
+  font-size: 32px; /* Standardized size */
+}
+
+.profile-text p {
+  margin-bottom: 10px;
+}
+
+.profile-text a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center; /* Center image for small screens */
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 16px;
+  border: 4px solid #333;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  color: #00aaff;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section-dark {
+  background: #1f1f1f;
+  border-radius: 16px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* SKILLS */
+.skills-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Better scaling */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* HOBBIES */
+.hobby-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.hobby-list li {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #00aaff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0077cc;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in elements */
+.section, .profile-card, .profile-text, .profile-image, .skills-grid li, .hobby-list li {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.profile-card { animation-delay: 0.2s; }
+.profile-text { animation-delay: 0.4s; }
+.profile-image { animation-delay: 0.6s; }
+
+/* Staggering for lists */
+.skills-grid li:nth-child(n), .hobby-list li:nth-child(n) {
+  animation-delay: calc(0.2s * var(--i, 1));
+}
+
+/* --- RESPONSIVE UPDATES --- */
+
+/* Tablet View */
+@media (max-width: 992px) {
+  .profile-card {
+    grid-template-columns: 1fr; /* Stack vertically */
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .profile-image img {
+    max-width: 240px; /* Slightly smaller */
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile View - In-update para sa font sizes at containers */
+@media (max-width: 768px) {
+  .header {
+    background: #121212; 
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    flex-direction: column; 
+    gap: 12px;
+    padding: 5px 15px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 20px; /* Inayos para hindi masyadong malaki */
+  }
+
+  .nav {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: row; 
+    justify-content: center;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 14px; /* Mas maliit na font para sa links */
+  }
+
+  .profile-section {
+    padding: 15px 10px; /* Mas maliit na padding sa container */
+  }
+
+  .profile-card {
+    background: transparent; 
+    padding: 5px;
+    gap: 15px;
+  }
+
+  .profile-text h2 {
+    font-size: 22px; /* Binawasan ang laki ng font */
+    margin-top: 5px;
+    line-height: 1.2;
+  }
+
+  .profile-text p {
+    font-size: 14px; /* Inayos ang paragraph font size */
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .profile-image img {
+    max-width: 70%; /* Mas maliit na image size sa mobile */
+    border-radius: 15px;
+  }
+
+  .btn {
+    width: 85%; 
+    padding: 12px;
+    font-size: 14px; /* Binawasan ang font size ng button */
+    margin-top: 15px;
+  }
+
+  .section {
+    padding: 30px 15px; /* Mas compact na spacing */
+  }
+
+  .section h2 {
+    font-size: 22px; /* Binawasan ang section heading size */
+    margin-bottom: 15px;
+  }
+}
+
+/* Additional fix for very small screens */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+  }
+  
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .profile-text h2 {
+    font-size: 20px;
+  }
+
+  .profile-text p {
+    font-size: 13px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+}
+
+/* Keyframes Refined */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  animation: slide-in 1s ease forwards;
+}

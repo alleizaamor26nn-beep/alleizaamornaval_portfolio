@@ -1,0 +1,268 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: "Libre Baskerville", "Bookman Old Style", Bookman, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* HEADER & NAVIGATION */
+header {
+  background-color: #1f1f1f;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  color: #f1f1f1;
+  font-weight: bold;
+  opacity: 0;
+  animation: slide-in 1s ease forwards;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #00aaff;
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  margin-bottom: 40px;
+}
+
+.contact-details p {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #cccccc;
+}
+
+.contact-details strong {
+  color: #ffffff;
+  margin-right: 5px;
+}
+
+.contact-details a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* CONTACT FORM CONTAINER */
+.contact-form {
+  margin-top: 20px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #1f1f1f; 
+  padding: 40px;
+  border-radius: 20px; /* Softer, premium corners */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #333;
+  border-radius: 10px; /* Standardized radius */
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00aaff;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.15);
+}
+
+/* BUTTON STYLING */
+.contact-form button {
+  background-color: #00aaff;
+  color: #ffffff;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 10px; /* Consistent with inputs */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #0088cc;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.3);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- MOBILE RESPONSIVE UPDATES --- */
+
+@media (max-width: 768px) {
+  header {
+    background: #121212;
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .contact-details p {
+    font-size: 15px;
+    word-wrap: break-word;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+    width: 100%;
+    border-radius: 15px;
+    background: #1f1f1f; /* Keep the card look on mobile */
+  }
+
+  .contact-form label {
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+  
+  .contact-section h2 {
+    font-size: 24px;
+  }
+}
