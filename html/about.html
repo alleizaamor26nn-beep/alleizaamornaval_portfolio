@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>About Me | Alleiza Amor — Developer & Creative</title>
+
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="stylesheet" href="../css/about-style.css">
+</head>
+<body>
+
+  <!-- animated background orbs -->
+  <div class="orb-bg orb-1"></div>
+  <div class="orb-bg orb-2"></div>
+
+  <!-- custom cursor (desktop) -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- HEADER - glass morphism -->
+  <header class="glass-header">
+    <div class="nav-container">
+      <div class="logo-wrapper">
+        <h1 class="logo">Alleiza<span class="dot-accent">.</span></h1>
+        <div class="logo-line"></div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="photo.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PROFILE HERO SECTION -->
+    <section class="profile-hero">
+      <div class="profile-grid">
+        <div class="profile-image-card">
+          <div class="image-frame">
+            <img src="../ako.jpg" alt="Alleiza Amor Naval" class="profile-img">
+            <div class="img-glow"></div>
+          </div>
+          <div class="availability-badge">
+            <i class="fas fa-code"></i> Available for work
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <div class="greeting-chip">
+            <i class="fas fa-user-astronaut"></i> meet the creator
+          </div>
+          <h1 class="name-title">ALLEIZA AMOR <span class="accent-text">G. NAVAL</span></h1>
+          <div class="title-tagline">
+            <i class="fas fa-laptop-code"></i> BSIT Graduate
+          </div>
+          <div class="info-details">
+            <div class="detail-item"><i class="fas fa-map-marker-alt"></i> Biñan, Laguna, Philippines</div>
+            <div class="detail-item"><i class="fas fa-phone-alt"></i> +63 919 7499 111</div>
+            <div class="detail-item"><i class="fas fa-envelope"></i> <a href="mailto:alleizaamor26nn@gmail.com">alleizaamor26nn@gmail.com</a></div>
+          </div>
+          <div class="profile-actions">
+            <button class="btn-primary" id="resumeBtn"><i class="fas fa-file-alt"></i> View Resume</button>
+            <button class="btn-outline" id="contactRedirect"><i class="fas fa-paper-plane"></i> Message Me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHY SECTION -->
+    <section class="bio-section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">— my narrative</span>
+          <h2>Behind the <span class="gradient-text">code & creativity</span></h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="bio-content">
+          <p>I'm a recent graduate with a burning passion for building efficient and impactful systems. Throughout my academic journey and internships, I have successfully developed several key projects that solve real-world problems — from cooperative management to educational platforms.</p>
+          <p>My featured projects include a <strong class="highlight-soft">Credit Cooperative System</strong> built with Laravel and Tailwind CSS to handle member remittances and loan processing, and a <strong class="highlight-soft">Violation Record Management System</strong> for Trimex Colleges using C# that features automated email notifications and data analytics. I also co-developed an <strong class="highlight-soft">All-in-One Point of Sale System</strong> using Flutter and PHP for Food & Beverage and Bread & Pastry departments, and designed a fully responsive <strong class="highlight-soft">Learning Management System (LMS)</strong> front-end. Additionally, I have built various inventory systems and POS applications using VB.NET, HTML/CSS, and MySQL.</p>
+          <p>I have solid experience working with databases using <strong>MySQL</strong> through phpMyAdmin and XAMPP, and I'm knowledgeable in <strong>Java using Apache NetBeans</strong>. I enjoy designing clean, user-friendly interfaces and consider myself more inclined toward <strong>front-end development</strong>, while still understanding the logic behind system and database design. I am eager to apply my skills, continue learning, and contribute to meaningful software solutions in a professional environment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS + EXPERTISE SECTION (modern cards) -->
+    <section class="skills-section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">— Basic Skills</span>
+          <h2>Skills & <span class="gradient-text">Knowledge</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="cat-icon"><i class="fab fa-html5"></i></div>
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5, CSS3, Tailwind</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Responsive Design</li>
+              <li>UI/UX Principles</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <div class="cat-icon"><i class="fas fa-database"></i></div>
+            <h3>Backend & DB</h3>
+            <ul>
+              <li>PHP, Laravel</li>
+              <li>MySQL, SQLite</li>
+              <li>Flutter (Dart)</li>
+              <li>REST concepts</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <div class="cat-icon"><i class="fas fa-code"></i></div>
+            <h3>Software & Tools</h3>
+            <ul>
+              <li>C#, VB.NET, Java</li>
+              <li>VS Code, NetBeans</li>
+              <li>Git & GitHub</li>
+              <li>Figma, Photoshop</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <div class="cat-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Certifications</h3>
+            <ul>
+              <li>NC II – CSS</li>
+              <li>Agile Fundamentals</li>
+              <li>Database Design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES & INTERESTS (interactive) -->
+    <section class="hobbies-section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          
+          <h2>Passions & <span class="gradient-text">creativity</span></h2>
+        </div>
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <i class="fas fa-gamepad"></i>
+            <h4>Gaming</h4>
+            <p>RPG & MOBA enthusiast — strategic thinking and teamwork.</p>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-language"></i>
+            <h4>Learning Japanese</h4>
+            <p>Exploring culture & 日本語 (N5 journey).</p>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-video"></i>
+            <h4>Video Editing</h4>
+            <p>Cinematic storytelling & motion graphics.</p>
+          </div>
+          <div class="hobby-card">
+            <i class="fas fa-paintbrush-pencil"></i>
+            <h4>Graphic Design</h4>
+            <p>Visual identity & brand aesthetics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO DRIVE CTA -->
+    <section class="drive-cta reveal-on-scroll">
+      <div class="cta-card">
+        <div class="cta-icon"><i class="fab fa-google-drive"></i></div>
+        <h3>Explore my creative archive</h3>
+        <p>Video edits, design mockups, and photography collection.</p>
+        <a href="https://drive.google.com/drive/folders/1BtG2ghHKR_3LAjpmxSSO_MafqD8NV3uB?usp=sharing" target="_blank" class="btn-drive">
+          Open Google Drive <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2025 Alleiza Amor — crafted with <i class="fas fa-heart"></i> & purpose</p>
+    </div>
+  </footer>
+
+  <script src="../js/about-script.js"></script>
+</body>
+</html>

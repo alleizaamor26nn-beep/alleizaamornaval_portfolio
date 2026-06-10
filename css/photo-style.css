@@ -1,0 +1,515 @@
+/* ========== photo-style.css ========== */
+/* Modern Projects Page - Glassmorphism, Animations, Preserved Content */
+
+:root {
+  --bg-dark: #0a0a0f;
+  --surface: #111118;
+  --card-glass: rgba(20, 22, 32, 0.7);
+  --primary: #6c5ce7;
+  --primary-glow: #8b74ff;
+  --accent: #ff6b9d;
+  --text-light: #f0f2f5;
+  --text-muted: #a0a5b5;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+  --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Libre Baskerville', serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Animated Background Orbs */
+.gradient-orb, .gradient-orb-2, .gradient-orb-3 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.gradient-orb {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.3), transparent);
+  top: -20%;
+  right: -15%;
+  animation: floatOrb1 20s infinite alternate;
+}
+
+.gradient-orb-2 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255, 107, 157, 0.2), transparent);
+  bottom: -30%;
+  left: -20%;
+  animation: floatOrb2 25s infinite alternate;
+}
+
+.gradient-orb-3 {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.15), transparent);
+  top: 40%;
+  right: -10%;
+  animation: floatOrb3 18s infinite alternate-reverse;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4%, 8%) scale(1.15); }
+}
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-6%, -6%) scale(1.2); }
+}
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8%, -5%) scale(1.1); }
+}
+
+/* Custom Cursor (Desktop) */
+@media (min-width: 1024px) {
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primary-glow);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-outline {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid rgba(108, 92, 231, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.12s ease-out;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(3px);
+  }
+}
+
+/* Glass Header */
+.glass-header {
+  position: sticky;
+  top: 18px;
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: rgba(10, 10, 15, 0.65);
+  backdrop-filter: blur(16px);
+  border-radius: 60px;
+  border: 1px solid var(--border-subtle);
+  z-index: 200;
+  transition: all 0.3s;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, #b9aeff);
+  /* [FIXED] Added standard property alongside vendor prefix */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-dot {
+  color: var(--primary);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset; /* [FIXED] Added standard property */
+}
+
+.logo-underline {
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  position: relative;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.mobile-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+/* Projects Hero */
+.projects-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero-content-center {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(108, 92, 231, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 6px 18px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  border: 0.5px solid rgba(108, 92, 231, 0.3);
+}
+
+.projects-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  /* [FIXED] Added standard property alongside vendor prefix */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.projects-hero p {
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.hero-stats-mini {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 16px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  color: var(--primary-glow);
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 40px 5% 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Project Row */
+.project-row {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 70px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.project-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gallery Item with Glass Effect */
+.gallery-item {
+  flex: 1;
+  min-width: 420px;
+  border-radius: 24px;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2a, #0f0f18);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.08);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay i {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Project Description */
+.project-description {
+  flex: 1;
+}
+
+.project-description h2 {
+  color: var(--primary-glow);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.project-description p {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Tech Stack */
+.tech-stack {
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-stack span {
+  background: rgba(108, 92, 231, 0.12);
+  color: var(--primary-glow);
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 0.5px solid rgba(108, 92, 231, 0.3);
+  transition: var(--transition);
+}
+
+.tech-stack span:hover {
+  background: rgba(108, 92, 231, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Google Drive Button */
+.clip-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--primary-glow);
+  border: 1.5px solid var(--primary-glow);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 40px;
+  transition: var(--transition);
+}
+
+.clip-button:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+
+/* Separator */
+.separator {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+  margin: 40px 0 50px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 35px;
+  border-top: 0.5px solid var(--border-subtle);
+  margin-top: 20px;
+  color: var(--text-muted);
+}
+
+footer i {
+  color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .project-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .gallery-item {
+    min-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .project-description {
+    text-align: center;
+  }
+  
+  .tech-stack {
+    justify-content: center;
+  }
+  
+  .projects-hero h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-header {
+    top: 12px;
+    width: 95%;
+  }
+  
+  .nav-container {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 250px;
+    background: rgba(8, 8, 12, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 20px;
+    padding: 35px 28px;
+    border-radius: 28px;
+    transition: 0.3s ease;
+    z-index: 300;
+    border: 1px solid var(--border-subtle);
+  }
+  
+  .nav-links.open {
+    right: 20px;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .project-description h2 {
+    font-size: 1.5rem;
+  }
+  
+  .projects-hero {
+    padding: 40px 20px 30px;
+  }
+  
+  .gallery-section {
+    padding: 20px 20px 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-stats-mini {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .clip-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tech-stack span {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}

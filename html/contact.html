@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Contact | Alleiza Amor — Let's Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/contact-style.css">
+</head>
+<body>
+
+  <!-- animated background orbs -->
+  <div class="gradient-orb"></div>
+  <div class="gradient-orb-2"></div>
+  <div class="gradient-orb-3"></div>
+
+  <!-- custom cursor (desktop) -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- GLASS HEADER -->
+  <header class="glass-header">
+    <div class="nav-container">
+      <div class="logo-wrapper">
+        <h1 class="logo">Contact<span class="accent-dot">.</span></h1>
+        <div class="logo-underline"></div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="photo.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-paper-plane"></i> let's talk
+        </div>
+        <h1>Get in <span class="gradient-text">Touch</span></h1>
+        <p>Have a project in mind or just want to say hello? I'm always excited to connect and collaborate on meaningful ideas.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <div class="contact-grid">
+        
+        <!-- LEFT SIDE - Contact Info Cards -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-details">
+              <h3>Email Me</h3>
+              <a href="mailto:alleizaamor26nn@gmail.com">alleizaamor26nn@gmail.com</a>
+              <p>I'll respond within 24-48 hours</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-details">
+              <h3>Call or Text</h3>
+              <a href="tel:+639197499111">+63 919 7499 111</a>
+              <p>Monday - Friday, 9AM - 6PM</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="info-details">
+              <h3>Facebook</h3>
+              <a href="https://www.facebook.com/alleiza.amor.g.naval/" target="_blank">Alleiza Amor G. Naval</a>
+              <p>Connect or send a message</p>
+            </div>
+          </div>
+          
+          <div class="social-links-alt">
+            <span>Find me on:</span>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/alleiza.amor.g.naval/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE - Contact Form -->
+        <div class="contact-form-wrapper">
+          <div class="form-header">
+            <i class="fas fa-comment-dots"></i>
+            <h3>Send a Message</h3>
+            <p>Fill out the form below and I'll get back to you soon.</p>
+          </div>
+          
+          <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbyVVnRXwRoF25Y6JORk1f4zf7gd5zR4XdfhXTScbNrW5PBavrXqUfDDPNQOiG2O85ao/exec" method="POST">
+            <div class="input-group">
+              <label for="name">
+                <i class="fas fa-user"></i>
+                <span>Your Name</span>
+              </label>
+              <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+            </div>
+
+            <div class="input-group">
+              <label for="email">
+                <i class="fas fa-envelope"></i>
+                <span>Email Address</span>
+              </label>
+              <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+            </div>
+
+            <div class="input-group">
+              <label for="message">
+                <i class="fas fa-pencil-alt"></i>
+                <span>Your Message</span>
+              </label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or questions..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECORATIVE QUOTE / DIVIDER -->
+    <div class="quote-divider">
+      <div class="quote-line"></div>
+      <div class="quote-text">
+        <i class="fas fa-quote-left"></i>
+        <span>Let's build something amazing together</span>
+        <i class="fas fa-quote-right"></i>
+      </div>
+      <div class="quote-line"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Alleiza Amor — open for opportunities & collaborations</p>
+    </div>
+  </footer>
+
+  <script src="../js/contact-script.js"></script>
+</body>
+</html>
